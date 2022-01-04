@@ -114,5 +114,35 @@ def count_stopwords(text: str, language: str = 'english', tokenizer=None, stopwo
     else:
         text_tokens = text.split()
 
-    stopwords_count = len([word for word in text_tokens if word in stopwords_set])
+    stopwords_count = len([word for word in tqdm(text_tokens) if word in stopwords_set])
     return stopwords_count
+
+def count_syllables(word: str) -> int:
+    """Count number of syllables in a word.
+    
+    Parameters:
+    ----------
+    word: str
+        Word to count syllables in.
+
+    Returns:
+    --------
+    syllables_count: int
+        Number of syllables in word
+    """
+    if not isinstance(word, str):
+        raise TypeError(f'Word should be a string, not a {type(word)}')
+    
+    word = word.lower()
+    count = 0
+    vowels = "aeiouy"
+    if word[0] in vowels:
+        count += 1
+    for index in range(1, len(word)):
+        if word[index] in vowels and word[index - 1] not in vowels:
+            count += 1
+    if word.endswith("e"):
+        count -= 1
+    if count == 0:
+        count += 1
+    return count

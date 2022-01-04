@@ -2,7 +2,13 @@ import pytest
 from nltk.corpus import stopwords
 from nltk.tokenize import WordPunctTokenizer
 
-from text_explore import count_words, count_chars, count_stopwords
+from text_explore import (
+                        count_words, 
+                        count_chars, 
+                        count_stopwords, 
+                        count_syllables_1, 
+                        count_syllables_2
+                        )
 
 
 def test_count_words():
@@ -71,3 +77,22 @@ def test_count_stopwords():
             yield word
 
     assert count_stopwords(sample_text_1) == 34
+
+def test_count_syllables():
+    sample_syllable_counts = {
+        'epidemic': 4,
+        'plagiarism': 3,
+        'bootlegging': 3,
+        21: 23,
+        (1, 65, 34): 89,
+        546.7: 67
+    }
+
+    for word, count in sample_syllable_counts.items():
+        if not isinstance(word, str):
+            with pytest.raises(TypeError):
+                syl_count = count_syllables_2(word)
+            continue # make sure this `continue` keyword isn't under the context manager above.
+
+        syl_count = count_syllables_2(word)
+        assert syl_count == count
