@@ -1,3 +1,5 @@
+"""Test's for the Counts Module."""
+
 import pytest
 from nltk.corpus import stopwords
 from nltk.tokenize import WordPunctTokenizer
@@ -6,8 +8,7 @@ from text_explore import (
                         count_words, 
                         count_chars, 
                         count_stopwords, 
-                        count_syllables_1, 
-                        count_syllables_2
+                        count_syllables 
                         )
 
 
@@ -91,8 +92,8 @@ def test_count_syllables():
     for word, count in sample_syllable_counts.items():
         if not isinstance(word, str):
             with pytest.raises(TypeError):
-                syl_count = count_syllables_2(word)
+                syl_count = count_syllables(word)
             continue # make sure this `continue` keyword isn't under the context manager above.
 
-        syl_count = count_syllables_2(word)
+        syl_count = count_syllables(word)
         assert syl_count == count
