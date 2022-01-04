@@ -1,7 +1,7 @@
 from typing import Iterable
 
 from nltk.corpus import stopwords
-
+from tqdm import tqdm
 
 def count_words(text: str, tokenizer=None) -> int:
     """
