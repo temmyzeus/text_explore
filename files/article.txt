@@ -1,0 +1,19 @@
+For nearly a hundred years, New England’s gray seals had a bounty on their heads. Maine and Massachusetts paid people to kill them, because they depleted fishing stocks. They were also hunted for their meat and pelts. By 1973—a year after the Marine Mammal Protection Act made it illegal to systematically kill the animals—a census estimated there were only 30 gray seals left along the entire coast of Maine.
+
+Since then, Canada’s gray seals have returned to recolonize the east coast of the U.S. Their populations are growing in Martha’s Vineyard, Nantucket, and Cape Cod, but scientists have had a tough time estimating their true numbers. Counting them while they’re on the beach can be difficult and expensive, and these surveys miss the seals in the water.
+
+Now, in a study published in Bioscience, researchers have combined Google Earth images and data from tagged seals to make a more precise estimation of the population. Their conclusion: there may be a lot more gray seals living along the East Coast than previously thought.
+
+“Past surveys based on traditional methods of counting … counted about 15,000 seals off the southeastern Massachusetts coast,” David Johnston, a marine conservation ecologist at Duke University, said in a statement. “Our technology-aided aerial survey, which used Google Earth imagery in conjunction with telemetry data from tagged animals, suggests the number is much larger—between 30,000 and 50,000.”
+
+Johnston and his colleagues used high-res images from Google Earth to count how many seals were hanging out on the beaches over several years. They also analyzed more than 8,000 hours of tracking data from tagged seals to try to determine how many would be in the water at any given time, hence the upper limit of their estimate.
+
+With extremely high-resolution imagery coming back from many commercial satellites, the authors argue that this can provide an inexpensive alternative to older methods of estimating a population size—especially when the imagery is paired with tagging data.
+
+Traditionally, scientists would capture some animals, mark them, then see how many of those marked animals can be found again later to extrapolate how big the entire population is. Or they would charter an airplane or helicopter ride to do aerial counts. By contrast, this study used tagging data from just eight seals to estimate how much time the average seal spends at sea versus on land.
+
+Not everyone is happy with the pinniped’s population explosion—particularly fisherman, who see them as competition for fish stocks. In recent years, some groups have advocated for culling the number of gray seals. Johnston says that not only would that be illegal, but it would also be premature.
+
+“We know almost nothing about what gray seals eat, how and where they forage, and whether they interact in an ecological way with fisheries,” he says. “There is very little evidence that culling seals will increase fishery yields or provide positive effects on the local ecosystem.”
+
+“The really cool thing here,” says Johnston, “is that the recovery of gray seals is a conservation success. It tells us that if we stop doing bad things to marine species, they can recover. That’s important for people to realize. If we invest in conservation we can get the job done.”
