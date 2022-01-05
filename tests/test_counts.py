@@ -4,7 +4,7 @@ import pytest
 from nltk.corpus import stopwords
 from nltk.tokenize import WordPunctTokenizer
 
-from text_explore import (
+from text_explore.counts import (
                         count_words, 
                         count_chars, 
                         count_stopwords, 
