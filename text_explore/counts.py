@@ -1,7 +1,10 @@
+import re
 from typing import Iterable
 
 from nltk.corpus import stopwords
+from nltk.tokenize import sent_tokenize
 from tqdm import tqdm
+
 
 def count_words(text: str, tokenizer=None) -> int:
     """
@@ -146,3 +149,22 @@ def count_syllables(word: str) -> int:
     if count == 0:
         count += 1
     return count
+
+def count_sentences(text: str) -> int:
+    """
+    Count number of Sentences in a text.
+
+    Arguments:
+    ---------
+    text: str
+        Text to count sentences in.
+
+    Returns:
+    -------
+    n_sentences: int
+        Number of Sentences in text.
+    """
+    
+    sentence_tokens: list = sent_tokenize(text)
+    n_sentences = len(sentence_tokens)
+    return n_sentences

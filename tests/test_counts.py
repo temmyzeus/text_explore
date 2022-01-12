@@ -1,5 +1,7 @@
 """Test's for the Counts Module."""
 
+from pathlib import Path
+
 import pytest
 from nltk.corpus import stopwords
 from nltk.tokenize import WordPunctTokenizer
@@ -8,8 +10,10 @@ from text_explore.counts import (
                         count_words, 
                         count_chars, 
                         count_stopwords, 
-                        count_syllables 
+                        count_syllables, 
+                        count_sentences
                         )
+from . import config
 
 
 def test_count_words():
@@ -97,3 +101,25 @@ def test_count_syllables():
 
         syl_count = count_syllables(word)
         assert syl_count == count
+
+def test_count_sentences():
+    files_dir = Path(config.TEST_UTILS_FILES_DIR)
+    file_type = '*.txt'
+    error_rate = config.ERROR_RATE # use error rate as +- 5
+
+    # counted manually
+    true_sentence_counts: dict[str, int] = {
+        'article': 26,
+        'fiction_novel': 267, 
+        'movie_review': 32,
+        'news_article': 21,
+        'young_adult_novel': 49
+    }
+
+    for file in files_dir.glob(file_type):
+        filename = file.stem
+        true_count = true_sentence_counts[filename]
+
+        with open(file, mode='r') as f:
+            text = f.read()
+        assert (count_sentences(text) - error_rate)  <= true_count <= (count_sentences(text) + error_rate)
