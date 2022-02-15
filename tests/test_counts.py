@@ -117,7 +117,7 @@ def test_count_sentences():
         "fiction_novel": 267,
         "movie_review": 32,
         "news_article": 21,
-        "young_adult_novel": 49,
+        "young_adult_novel": 40,
     }
 
     for file in files_dir.glob(file_type):
