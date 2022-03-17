@@ -9,9 +9,15 @@ on:
 jobs:
   publish:
     runs-on: ubuntu-latest
+    uses: actions/checkout@v2
 
     steps:
-      - uses: actions/checkout@v2
+      - name: Install Python
+        - uses: actions/setup-python@v2
+          with:
+            python_version: "3.8.10"
+            architecture: "x64"
+      
       - name: Build and Publish to PyPI
         uses: JRubics/poetry-publish@v1.10
         with:
