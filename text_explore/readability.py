@@ -2,7 +2,8 @@
 
 from typing import Union
 
-from text_explore.counts import count_syllables, count_sentences
+from .counts import count_syllables, count_sentences
+from .utils import _clip_scores
 
 
 def flesch_reading_ease(text: str, tokenizer=None) -> float:
@@ -21,7 +22,7 @@ def flesch_reading_ease(text: str, tokenizer=None) -> float:
 
     Returns:
     -------
-        flesch_score: float
+    flesch_score: float
     """
     assert isinstance(text, str), f"Text must be a  string, not a {type(text)}"
 
@@ -41,7 +42,8 @@ def flesch_reading_ease(text: str, tokenizer=None) -> float:
         - (1.015 * (total_words / total_sentences))
         - (84.6 * (total_syllables / total_words))
     )
-    return round(score, 1)
+    flesh_reading_ease_score = round(score, 1)
+    return _clip_scores(flesh_reading_ease_score, 100, 0)
 
 
 def flesch_kincaid_grade(text: str, tokenizer=None) -> float:
@@ -60,7 +62,7 @@ def flesch_kincaid_grade(text: str, tokenizer=None) -> float:
 
     Returns:
     --------
-        flesch-kincaid grade level score: float
+    flesch-kincaid grade level score: float
     """
     assert isinstance(text, str), f"Text must be a  string, not a {type(text)}"
 
@@ -80,23 +82,5 @@ def flesch_kincaid_grade(text: str, tokenizer=None) -> float:
         + (11.8 * (total_syllables / total_words))
         - 15.59
     )
-    return round(score, 1)
-
-
-class FleschKincaidTest:
-    """Get's the Flesch Kincaid readability test score for text.
-
-    The Flesch-Kincaid readability tests are readability tests designed to \
-    indicate how difficult a passage in English is to understand.\
-    It was developed Rudolf Flesch in the year 1948.
-
-    Arguments:
-    ----------
-        text: str
-
-    Returns:
-    -------
-        flesch_score: float
-    """
-
-    pass
+    flesch_kincaid_score = round(score, 1)
+    return flesch_kincaid_score
