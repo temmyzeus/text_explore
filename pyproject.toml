@@ -3,12 +3,21 @@ name = "text_explore"
 version = "0.0.1"
 description = "A Python Package to perform Exploratory Data Analysis on Text Data."
 authors = ["Temiloluwa Awoyele <awoyeletemiloluwa@gmail.com>"]
-license = "MIT License"
+readme = "README.md"
+license = "MIT"
+homepage = "https://github.com/temmyzeus/text_explore"
+repository = "https://github.com/temmyzeus/text_explore"
+include = [
+    "LICENSE",
+]
 
 [tool.poetry.dependencies]
-python = "3.8.10"
+python = "^3.7"
+nltk = "3.6.6"
 
 [tool.poetry.dev-dependencies]
+black = "^22.1.0"
+pytest = "^7.1.1"
 
 [build-system]
 requires = ["poetry-core @ git+https://github.com/python-poetry/poetry-core.git@master"]

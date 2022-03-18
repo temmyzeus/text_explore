@@ -1,0 +1,24 @@
+name: Publish Text_Explore to PyPI
+
+on:
+  release:
+    types: [published]
+    branches:
+      - publish
+
+jobs:
+  publish:
+    runs-on: ubuntu-latest
+    uses: actions/checkout@v2
+
+    steps:
+      - name: Install Python
+        - uses: actions/setup-python@v2
+          with:
+            python_version: "3.8.10"
+            architecture: "x64"
+      
+      - name: Build and Publish to PyPI
+        uses: JRubics/poetry-publish@v1.10
+        with:
+          pypi_token: ${{ secrets.TEST_PYPI_TOKEN }}
