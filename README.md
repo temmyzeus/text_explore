@@ -29,6 +29,8 @@ pip install text_explore
 
     The actor, who is black and gay, said the attackers shouted slurs at him and a Trump slogan, dumped a "chemical substance" on him and tied a noose around his neck while he was walking late at night in January 2019."""
 
+    words = ["lean", "thought", "mean", "flower", "yeast", "vehicle", "feel", "broadcast", "dreamed", "resources"]
+
     doc = TextExplore(text)
 
     # Count Number of Words in Text
@@ -69,6 +71,11 @@ pip install text_explore
         flesch_reading_ease
     )
 
+
+    # Count Number of Syllables in a Word
+    for word in words:
+        print(f"{word} syllables count:", count_syllables(word))
+
     # Count Number of Words in Text
     print("Word Count:", count_words(text))
 
@@ -77,9 +84,6 @@ pip install text_explore
 
     # Count Number of Stopwords in Text
     print("Stopwords Count", count_stopwords(text))
-
-    # Count Number of Syllables in Text
-    print("Syllables Count:", count_syllables(text))
 
     # Count Number of Sentences in Text
     print("Sentences Count:", count_sentences(text))
