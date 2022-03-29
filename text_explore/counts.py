@@ -147,7 +147,10 @@ def count_syllables(word: str) -> int:
     if word[0] in vowels:
         count += 1
     for index in range(1, len(word)):
-        if word[index] in vowels and word[index - 1] not in vowels:
+        former_char = word[index - 1]
+        latter_char = word[index]
+
+        if (latter_char in vowels) and (former_char not in vowels):
             count += 1
     if word.endswith("e"):
         count -= 1
