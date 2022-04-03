@@ -3,7 +3,6 @@ from typing import Iterable
 
 from nltk.corpus import stopwords
 from nltk.tokenize import sent_tokenize
-from tqdm import tqdm
 
 
 def count_words(text: str, tokenizer=None) -> int:
@@ -121,7 +120,7 @@ def count_stopwords(
     else:
         text_tokens = text.split()
 
-    stopwords_count = len([word for word in tqdm(text_tokens) if word in stopwords_set])
+    stopwords_count = len([word for word in text_tokens if word in stopwords_set])
     return stopwords_count
 
 
